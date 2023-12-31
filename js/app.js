@@ -5,14 +5,23 @@ let amigosNoSorteio = [];
 let amigosSorteados = [];
 
 function adicionar() {
-    amigosNoSorteio.push(formulario.value);
-    exibirAmigos('adicionar');
-    limparFormulario();
+    if (amigosNoSorteio.includes(formulario.value) === false && formulario.value != '') {
+        amigosNoSorteio.push(formulario.value);
+        exibirAmigos('adicionar');
+        limparFormulario();
+    } else if (amigosNoSorteio.includes(formulario.value)) {
+        console.error('Esse amigo(a) já foi adicionado(a).');
+        alert('Esse amigo(a) já foi adicionado(a).')
+    }
 }
 
 function sortear() {
     if (amigosNoSorteio.length == amigosSorteados.length) {
-    } else {
+        exibirSorteio('limpar');
+        amigosSorteados = [];
+    }
+
+    if (amigosNoSorteio.length >= 3) {
         while (amigosSorteados.length < amigosNoSorteio.length) {
             let indice = gerarNumeroAleatorio();
 
@@ -25,9 +34,11 @@ function sortear() {
         }
 
         console.log(amigosSorteados);
+        exibirSorteio('mostrar');
+    } else {
+        console.error('Por favor, adicione, pelo menos, três amigos no sorteio.');
+        alert('Por favor, adicione, pelo menos, três amigos no sorteio.');
     }
-
-    exibirSorteio('mostrar');
 }
 
 function reiniciar() {
