@@ -109,5 +109,16 @@ var novaLista = minhaLista.concat(outraLista);
 console.log(novaLista);
 
 // Desafio 3
-novaLista.splice(novaLista.length - 1);
-console.log(novaLista);
+// novaLista.splice(novaLista.length - 1);
+// console.log(novaLista);
+
+// Desafio 4
+function embaralharLista() {
+    for (let i = novaLista.length; i; i--) {
+        let indiceAleatorio = Math.floor(Math.random());
+
+        [novaLista[i - 1], novaLista[indiceAleatorio]] = [novaLista[indiceAleatorio], novaLista[i - 1]];
+    }
+
+    console.log(novaLista);
+}
