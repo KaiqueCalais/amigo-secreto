@@ -103,22 +103,28 @@ function limparFormulario() {
 }
 
 // Desafio 2
-var minhaLista = [1, 2, 3];
-var outraLista = [4, 5, 6];
-var novaLista = minhaLista.concat(outraLista);
-console.log(novaLista);
+// var minhaLista = [1, 2, 3];
+// var outraLista = [4, 5, 6];
+// var novaLista = minhaLista.concat(outraLista);
+// console.log(novaLista);
 
 // Desafio 3
 // novaLista.splice(novaLista.length - 1);
 // console.log(novaLista);
 
 // Desafio 4
-function embaralharLista() {
-    for (let i = novaLista.length; i; i--) {
-        let indiceAleatorio = Math.floor(Math.random());
+// function embaralharLista() {
+//     for (let i = novaLista.length; i; i--) {
+//         let indiceAleatorio = Math.floor(Math.random());
 
-        [novaLista[i - 1], novaLista[indiceAleatorio]] = [novaLista[indiceAleatorio], novaLista[i - 1]];
-    }
+//         [novaLista[i - 1], novaLista[indiceAleatorio]] = [novaLista[indiceAleatorio], novaLista[i - 1]];
+//     }
 
-    console.log(novaLista);
+//     console.log(novaLista);
+// }
+
+// Desafio 5
+const lista = [1, 2, 1, 3];
+function removerDuplicatas(array) {
+    return [...new Set(array)];
 }
