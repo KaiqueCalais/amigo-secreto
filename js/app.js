@@ -7,7 +7,7 @@ let amigosSorteados = [];
 function adicionar() {
     if (amigosNoSorteio.includes(formulario.value) === false && formulario.value != '') {
         amigosNoSorteio.push(formulario.value);
-        exibirAmigos('adicionar');
+        exibirAmigos();
         limparFormulario();
     } else if (amigosNoSorteio.includes(formulario.value)) {
         console.error('Esse amigo(a) já foi adicionado(a).');
@@ -44,7 +44,7 @@ function sortear() {
 function reiniciar() {
     amigosNoSorteio = [];
     amigosSorteados = [];
-    exibirAmigos('deletar');
+    exibirAmigos();
     exibirSorteio('limpar');
     limparFormulario();
     console.clear();
@@ -60,18 +60,26 @@ function gerarNumeroAleatorio() {
     return numeroAleatorio;
 }
 
-function exibirAmigos(acao) {
-    if (acao == 'adicionar') {
+function exibirAmigos() {
+    listaDeAmigos.textContent = '';
 
+    for (let i = 0; i < amigosNoSorteio.length; i++) {
+        // Cria um elemento de parágrafo para cada amigo
         if (listaDeAmigos.textContent == '') {
-            listaDeAmigos.textContent = formulario.value;
+            listaDeAmigos.innerHTML = `
+            <p onClick="removerAmigo(${i})">${amigosNoSorteio[i]}</p>`;
         } else {
-            listaDeAmigos.textContent += ', ' + formulario.value;
+            listaDeAmigos.innerHTML += `
+            <p onClick="removerAmigo(${i})">, ${amigosNoSorteio[i]}</p>`;
         }
-
-    } else if (acao == 'deletar') {
-        listaDeAmigos.textContent = '';
     }
+
+    limparFormulario();
+}
+
+function removerAmigo(i) {
+    amigosNoSorteio.splice(i, 1);
+    exibirAmigos();
 }
 
 function exibirSorteio(acao) {

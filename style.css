@@ -204,3 +204,8 @@ body {
   background-color: #fff;
   color: #1875e8;
 }
+
+/* Adicionado por mim */
+#lista-amigos {
+  display: flex;
+}
