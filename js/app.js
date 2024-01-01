@@ -101,3 +101,9 @@ function exibirSorteio(acao) {
 function limparFormulario() {
     formulario.value = '';
 }
+
+// Desafio 2
+var minhaLista = [1, 2, 3];
+var outraLista = [4, 5, 6];
+var novaLista = minhaLista.concat(outraLista);
+console.log(novaLista);
