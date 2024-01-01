@@ -124,7 +124,7 @@ function limparFormulario() {
 // }
 
 // Desafio 5
-const lista = [1, 2, 1, 3];
-function removerDuplicatas(array) {
-    return [...new Set(array)];
-}
+// const lista = [1, 2, 1, 3];
+// function removerDuplicatas(array) {
+//     return [...new Set(array)];
+// }
