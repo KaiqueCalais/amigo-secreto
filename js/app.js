@@ -107,3 +107,7 @@ var minhaLista = [1, 2, 3];
 var outraLista = [4, 5, 6];
 var novaLista = minhaLista.concat(outraLista);
 console.log(novaLista);
+
+// Desafio 3
+novaLista.splice(novaLista.length - 1);
+console.log(novaLista);
