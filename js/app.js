@@ -11,12 +11,15 @@ function adicionar() {
         limparFormulario();
     } else if (amigosNoSorteio.includes(formulario.value)) {
         console.error('Esse amigo(a) já foi adicionado(a).');
-        alert('Esse amigo(a) já foi adicionado(a).')
+        alert('Esse amigo(a) já foi adicionado(a).');
+    } else {
+        console.error('Por favor, digite o nome do amigo.');
+        alert('Por favor, digite o nome do amigo.');
     }
 }
 
 function sortear() {
-    if (amigosNoSorteio.length == amigosSorteados.length) {
+    if (amigosNoSorteio.length >= amigosSorteados.length) {
         exibirSorteio('limpar');
         amigosSorteados = [];
     }
